@@ -1,0 +1,81 @@
+<!-- School Batch Photos Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Batch Photos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .photo-box {
+            position: relative;
+            width: 350px;
+            height: auto;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .photo-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+        .names {
+            font-weight: bold;
+            margin-top: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>School Batch Photos</h1>
+        <nav>
+            <ul>
+                <li><a href="home page.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="gallery">
+        <div class="photo-box">
+            <img src="E:\S.T. Peter's School\IMG_20231211_194418_598.jpg" alt="Batch 2020">
+            <p class="quote">"A journey of a thousand memories in a single picture."</p>
+            <p class="names">Aryan kashyap,Suanta,Progyan Dutta,Pranjibon Kataky...</p>
+        </div>
+        <div class="photo-box">
+            <img src="batch2.jpg" alt="Batch 2021">
+            <p class="quote">"Friends today, family forever."</p>
+            <p class="names">Michael, Lisa, Kevin, Rachel, Arjun, Sita...</p>
+        </div>
+        <div class="photo-box">
+            <img src="batch3.jpg" alt="Batch 2022">
+            <p class="quote">"Cherishing the moments that made us who we are."</p>
+            <p class="names">David, Anna, Chris, Sophia, Rahul, Meera...</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Night sky group. All rights reserved.</p>
+    </footer>
+</body>
+</html>

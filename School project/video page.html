@@ -1,0 +1,107 @@
+<!-- School Videos Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Videos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: skyblue;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .video-box {
+            position: relative;
+            width: 300px;
+            height: auto;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            padding: 10px;
+        }
+        .video-box video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .upload-section {
+            margin: 20px auto;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>School Videos</h1>
+        <nav>
+            <ul>
+                <li><a href="home page.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="upload-section">
+        <h2>Upload Your memoriable Video</h2>
+        <input type="file" id="videoUpload" accept="video/*">
+        <input type="text" id="videoExperience" placeholder="Write about this moment...">
+        <button onclick="uploadVideo()">Upload</button>
+    </div>
+    <div class="gallery" id="videoGallery">
+        <!-- Uploaded videos will appear here -->
+    </div>
+    <footer>
+        <p>&copy; 2025 Night sky group. All rights reserved.</p>
+    </footer>
+    <script>
+        function uploadVideo() {
+            let fileInput = document.getElementById("videoUpload");
+            let experienceText = document.getElementById("videoExperience").value;
+            if (fileInput.files.length > 0) {
+                let file = fileInput.files[0];
+                let reader = new FileReader();
+                reader.onload = function(event) {
+                    let videoDiv = document.createElement("div");
+                    videoDiv.classList.add("video-box");
+                    let video = document.createElement("video");
+                    video.src = event.target.result;
+                    video.controls = true;
+                    let quote = document.createElement("p");
+                    quote.classList.add("quote");
+                    quote.innerText = experienceText || "A moment to remember!";
+                    videoDiv.appendChild(video);
+                    videoDiv.appendChild(quote);
+                    document.getElementById("videoGallery").appendChild(videoDiv);
+                };
+                reader.readAsDataURL(file);
+                fileInput.value = "";
+                document.getElementById("videoExperience").value = "";
+            } else {
+                alert("Please select a video to upload.");
+            }
+        }
+    </script>
+</body>
+</html>
